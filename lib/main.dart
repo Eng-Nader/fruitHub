@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:fruithub/views/home_view.dart';
 
 void main() {
-  runApp(const FruitHub());
+  runApp(
+    const FruitHub(),
+  );
 }
 
 class FruitHub extends StatelessWidget {
@@ -12,7 +12,12 @@ class FruitHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeView(),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Text('FruiTHub'),
+        ),
+      ),
     );
   }
 }
