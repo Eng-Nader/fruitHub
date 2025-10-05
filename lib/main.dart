@@ -11,12 +11,21 @@ class FruitHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Text('FruiTHub'),
-        ),
+            child: Container(
+          height: 100,
+          width: 100,
+          decoration: const BoxDecoration(
+            color: Colors.black,
+          ),
+          child: Image.asset(
+            'assets/images/fruit_logo.png',
+            fit: BoxFit.cover,
+          ),
+        )),
       ),
     );
   }
