@@ -1,32 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:fruithub/core/routers/fruit_routers.dart';
+import 'package:fruithub/featurs/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(
-    const FruitHub(),
-  );
+  runApp(const FruitsHub());
 }
 
-class FruitHub extends StatelessWidget {
-  const FruitHub({super.key});
+class FruitsHub extends StatelessWidget {
+  const FruitsHub({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-            child: Container(
-          height: 100,
-          width: 100,
-          decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
-          child: Image.asset(
-            'assets/images/fruit_logo.png',
-            fit: BoxFit.cover,
-          ),
-        )),
-      ),
+      onGenerateRoute: FruitRouters().generateRouter,
     );
   }
 }
