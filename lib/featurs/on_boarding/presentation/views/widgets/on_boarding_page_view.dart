@@ -13,7 +13,7 @@ class OnBoradingPageView extends StatelessWidget {
           title: Text('nader'),
           subTitle: '',
           backGroundImage: Assets.imagesBackGroundPageview,
-          image: '',
+          image: Assets.imagesOnBoardingFruits,
         )
       ],
     );
