@@ -5,8 +5,12 @@ class OnBoradingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: const Text('FutitsHub'),
+    return const Center(
+      child: SizedBox(
+        child: Text(
+          'FutitsHub',
+        ),
+      ),
     );
   }
 }
