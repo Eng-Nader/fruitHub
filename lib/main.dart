@@ -28,6 +28,9 @@ class FruitsHub extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+      ),
       supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: FruitRouters().generateRouter,

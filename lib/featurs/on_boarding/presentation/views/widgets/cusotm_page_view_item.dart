@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
 
 class CusotmPageViewItem extends StatelessWidget {
   const CusotmPageViewItem(
@@ -38,7 +39,21 @@ class CusotmPageViewItem extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
+        const SizedBox(
+          height: 64,
+        ),
+        title,
+        const SizedBox(
+          height: 24,
+        ),
+        Text(
+          subTitle,
+          textAlign: TextAlign.center,
+          style: FruitsSytls.styleBold23.copyWith(
+            fontSize: 13,
+          ),
+        ),
       ],
     );
   }
