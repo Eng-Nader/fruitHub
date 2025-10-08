@@ -5,7 +5,7 @@ class FruitsSytls {
   static const styleBold23 = TextStyle(
     fontSize: 23,
     fontWeight: FontWeight.bold,
-    fontFamily: kFontFamily,
+    
     color: Color(0xff0C0D0D),
   );
 }

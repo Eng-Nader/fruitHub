@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fruithub/core/constants/constants.dart';
 import 'package:fruithub/generated/l10n.dart' show S;
 
 import 'core/routers/fruit_routers.dart';
@@ -29,6 +30,7 @@ class FruitsHub extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(
+        fontFamily: kFontFamily,
         scaffoldBackgroundColor: Colors.white,
       ),
       supportedLocales: S.delegate.supportedLocales,
