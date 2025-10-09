@@ -39,20 +39,22 @@ class CusotmPageViewItem extends StatelessWidget {
                   image,
                 ),
               ),
-              
-                Visibility(
-                  visible: isVisible,
-                  child: Padding(
-                    padding: const EdgeInsets.all(30),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'تخطي',
-                        style: FruitsSytls.styleBold23,
-                      ),
+              Visibility(
+                visible: isVisible,
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.black,
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'تخطي',
+                      style: FruitsSytls.styleBold23,
                     ),
                   ),
                 ),
+              ),
             ],
           ),
         ),
