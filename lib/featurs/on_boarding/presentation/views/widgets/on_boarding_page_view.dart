@@ -6,9 +6,11 @@ class OnBoradingPageView extends StatelessWidget {
   OnBoradingPageView({
     super.key,
     required this.pageController,
+    required this.currentPage,
   });
   final PageController pageController;
   final List<OnBoradingModel> onboradingList = OnBoradingModel.onboradingList;
+  final int currentPage;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class OnBoradingPageView extends StatelessWidget {
       itemCount: onboradingList.length,
       itemBuilder: (context, index) {
         return CusotmPageViewItem(
-          isVisible: pageController.page == 0,
+          isVisible: currentPage == 0,
           subTitle: onboradingList[index].subTitle,
           image: onboradingList[index].image,
           title: onboradingList[index].title,

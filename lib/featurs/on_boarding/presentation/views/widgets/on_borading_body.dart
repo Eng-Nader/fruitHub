@@ -15,14 +15,13 @@ class OnBoradingBody extends StatefulWidget {
 
 class _OnBoradingBodyState extends State<OnBoradingBody> {
   late PageController pageController;
-  var currentPage = 0;
+  ValueNotifier<int> currentPage = ValueNotifier(0);
   @override
   void initState() {
     super.initState();
     pageController = PageController();
     pageController.addListener(() {
-      currentPage = pageController.page!.round();
-      setState(() {});
+      currentPage.value = pageController.page!.round();
     });
   }
 
@@ -31,29 +30,39 @@ class _OnBoradingBodyState extends State<OnBoradingBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(
-          child: OnBoradingPageView(
-            pageController: pageController,
-          ),
-        ),
-        DotsIndecator(
-          currentIndex: currentPage,
-        ),
-        Visibility(
-          maintainState: true,
-          maintainAnimation: true,
-          maintainSize: true,
-          visible: currentPage == 1,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: kHorzintalPadding,
-              vertical: 43,
-            ),
-            child: BasicButton(
-              onPressed: () {},
-              title: 'ابدا الان ',
+        ValueListenableBuilder(
+          valueListenable: currentPage,
+          builder: (context, value, _) => Expanded(
+            child: OnBoradingPageView(
+              currentPage: value,
+              pageController: pageController,
             ),
           ),
+        ),
+        ValueListenableBuilder(
+          valueListenable: currentPage,
+          builder: (context, value, _) => DotsIndecator(
+            currentIndex: value,
+          ),
+        ),
+        ValueListenableBuilder(
+          valueListenable: currentPage,
+          builder: (context, value, _) {
+            return currentPage.value == 1
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: kHorzintalPadding,
+                      vertical: 43,
+                    ),
+                    child: BasicButton(
+                      onPressed: () {},
+                      title: 'ابدا الان ',
+                    ),
+                  )
+                : Container(
+                    height: 120,
+                  );
+          },
         )
       ],
     );

@@ -1,21 +1,20 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruithub/core/constants/constants.dart';
+
 import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
 
 class CusotmPageViewItem extends StatelessWidget {
-  const CusotmPageViewItem(
-      {super.key,
-      required this.subTitle,
-      required this.image,
-      required this.title,
-      required this.backGroundImage, required this.isVisible,
-      });
+  const CusotmPageViewItem({
+    super.key,
+    required this.subTitle,
+    required this.image,
+    required this.title,
+    required this.backGroundImage,
+    required this.isVisible,
+  });
   final String subTitle, image, backGroundImage;
   final Widget title;
-  final bool isVisible ; 
+  final bool isVisible;
 
   @override
   Widget build(BuildContext context) {
@@ -40,20 +39,20 @@ class CusotmPageViewItem extends StatelessWidget {
                   image,
                 ),
               ),
-              Visibility(
-                visible: isVisible,
-                child: const Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Text(
-                    'تخطي',
-                    style: TextStyle(
-                      fontFamily: kFontFamily,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+              
+                Visibility(
+                  visible: isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'تخطي',
+                        style: FruitsSytls.styleBold23,
+                      ),
                     ),
                   ),
                 ),
-              ),
             ],
           ),
         ),
