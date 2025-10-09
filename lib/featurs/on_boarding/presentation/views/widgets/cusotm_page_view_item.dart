@@ -11,11 +11,11 @@ class CusotmPageViewItem extends StatelessWidget {
       required this.subTitle,
       required this.image,
       required this.title,
-      required this.backGroundImage,
+      required this.backGroundImage, required this.isVisible,
       });
   final String subTitle, image, backGroundImage;
   final Widget title;
-  
+  final bool isVisible ; 
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +40,17 @@ class CusotmPageViewItem extends StatelessWidget {
                   image,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(30),
-                child: Text(
-                  'تخطي',
-                  style: TextStyle(
-                    fontFamily: kFontFamily,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+              Visibility(
+                visible: isVisible,
+                child: const Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Text(
+                    'تخطي',
+                    style: TextStyle(
+                      fontFamily: kFontFamily,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
