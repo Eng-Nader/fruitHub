@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruithub/core/constants/constants.dart';
 
 import '../../../../../core/utils/styles/fruits_sytls.dart';
 
@@ -47,7 +48,9 @@ class CusotmPageViewItem extends StatelessWidget {
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, kLoginView);
+                    },
                     child: Text(
                       'تخطي',
                       style: FruitsSytls.styleBold23.copyWith(

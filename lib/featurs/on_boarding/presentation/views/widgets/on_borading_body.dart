@@ -49,7 +49,9 @@ class _OnBoradingBodyState extends State<OnBoradingBody> {
               vertical: 43,
             ),
             child: BasicButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, kLoginView);
+              },
               title: 'ابدا الان ',
             ),
           ),
