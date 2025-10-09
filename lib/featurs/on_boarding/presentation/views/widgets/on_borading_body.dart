@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:fruithub/core/constants/constants.dart';
 import 'package:fruithub/core/utils/widgets/basic_button.dart';
@@ -15,13 +13,14 @@ class OnBoradingBody extends StatefulWidget {
 
 class _OnBoradingBodyState extends State<OnBoradingBody> {
   late PageController pageController;
-  ValueNotifier<int> currentPage = ValueNotifier(0);
+  var currentPage = 0;
   @override
   void initState() {
     super.initState();
     pageController = PageController();
     pageController.addListener(() {
-      currentPage.value = pageController.page!.round();
+      currentPage = pageController.page!.round();
+      setState(() {});
     });
   }
 
@@ -30,39 +29,30 @@ class _OnBoradingBodyState extends State<OnBoradingBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ValueListenableBuilder(
-          valueListenable: currentPage,
-          builder: (context, value, _) => Expanded(
-            child: OnBoradingPageView(
-              currentPage: value,
-              pageController: pageController,
+        Expanded(
+          child: OnBoradingPageView(
+            currentPage: currentPage,
+            pageController: pageController,
+          ),
+        ),
+        DotsIndecator(
+          currentIndex: currentPage,
+        ),
+        Visibility(
+          visible: currentPage == 1,
+          maintainAnimation: true,
+          maintainSize: true,
+          maintainState: true,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: kHorzintalPadding,
+              vertical: 43,
+            ),
+            child: BasicButton(
+              onPressed: () {},
+              title: 'ابدا الان ',
             ),
           ),
-        ),
-        ValueListenableBuilder(
-          valueListenable: currentPage,
-          builder: (context, value, _) => DotsIndecator(
-            currentIndex: value,
-          ),
-        ),
-        ValueListenableBuilder(
-          valueListenable: currentPage,
-          builder: (context, value, _) {
-            return currentPage.value == 1
-                ? Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: kHorzintalPadding,
-                      vertical: 43,
-                    ),
-                    child: BasicButton(
-                      onPressed: () {},
-                      title: 'ابدا الان ',
-                    ),
-                  )
-                : Container(
-                    height: 120,
-                  );
-          },
         )
       ],
     );
