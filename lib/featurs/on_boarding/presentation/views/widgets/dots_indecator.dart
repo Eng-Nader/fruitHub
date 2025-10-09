@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
+import '../../../../../core/utils/fruits_colors.dart';
 
 class DotsIndecator extends StatelessWidget {
   const DotsIndecator({

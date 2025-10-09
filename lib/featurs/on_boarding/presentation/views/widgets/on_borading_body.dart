@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/constants/constants.dart';
-import 'package:fruithub/core/utils/widgets/basic_button.dart';
-import 'package:fruithub/featurs/on_boarding/presentation/views/widgets/dots_indecator.dart';
-import 'package:fruithub/featurs/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
+import '../../../../../core/constants/constants.dart';
+import '../../../../../core/utils/widgets/basic_button.dart';
+import 'dots_indecator.dart';
+import 'on_boarding_page_view.dart';
 
 class OnBoradingBody extends StatefulWidget {
   const OnBoradingBody({super.key});

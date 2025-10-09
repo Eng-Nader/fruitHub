@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class CusotmPageViewItem extends StatelessWidget {
   const CusotmPageViewItem({
@@ -48,9 +48,11 @@ class CusotmPageViewItem extends StatelessWidget {
                       foregroundColor: Colors.black,
                     ),
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'تخطي',
-                      style: FruitsSytls.styleBold23,
+                      style: FruitsSytls.styleBold23.copyWith(
+                        color: const Color(0xff949d9e),
+                      ),
                     ),
                   ),
                 ),

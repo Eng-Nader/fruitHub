@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/constants/constants.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
+import '../../constants/constants.dart';
+import '../fruits_colors.dart';
 
 class BasicButton extends StatelessWidget {
   const BasicButton({super.key, required this.onPressed, required this.title});

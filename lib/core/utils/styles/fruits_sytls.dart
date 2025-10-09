@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:fruithub/core/constants/constants.dart';
+import '../../constants/constants.dart';
 
 class FruitsSytls {
   static const TextStyle styleBold13 = TextStyle(
