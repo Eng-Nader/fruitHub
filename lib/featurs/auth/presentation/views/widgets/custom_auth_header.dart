@@ -7,18 +7,26 @@ class CustomAuthHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Stack(
       children: [
-        const CircleAvatar(
-            backgroundColor: Colors.transparent,
-            child: Icon(
-              Icons.arrow_back_ios,
-            )),
-        Text(
-          titileHeader,
-          style: FruitsSytls.styleBold19,
+        Center(
+          child: Text(
+            titileHeader,
+            style: FruitsSytls.styleBold19,
+          ),
         ),
+        Container(
+          padding: const EdgeInsets.all(4),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: BoxBorder.all(
+              color: Colors.grey,
+            ),
+          ),
+          child: const Icon(
+            Icons.arrow_back_ios,
+          ),
+        )
       ],
     );
   }
