@@ -6,6 +6,7 @@ import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
 import 'package:fruithub/core/utils/widgets/basic_button.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_header.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_text_fild.dart';
+import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_divider.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_intinal_auth_body.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_social_button.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/social_button_view.dart';
@@ -107,6 +108,13 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 37,
+            ),
+            const CustomDivider(),
+            const SizedBox(
+              height: 33,
             ),
             const SocialButtonView(),
           ],
