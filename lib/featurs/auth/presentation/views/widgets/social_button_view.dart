@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/fruits_assets.dart';
-import 'package:fruithub/featurs/auth/data/models/auth_social_model.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_social_button.dart';
+import '../../../../../core/utils/fruits_assets.dart';
+import '../../../data/models/auth_social_model.dart';
+import 'custom_social_button.dart';
 
 class SocialButtonView extends StatelessWidget {
   const SocialButtonView({super.key});

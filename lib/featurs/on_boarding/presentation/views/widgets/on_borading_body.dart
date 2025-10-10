@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/services/shared_prefrences_services.dart';
+import '../../../../../core/utils/services/shared_prefrences_services.dart';
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/utils/widgets/basic_button.dart';
 import 'dots_indecator.dart';

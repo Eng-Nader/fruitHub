@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruithub/core/utils/services/shared_prefrences_services.dart';
+import '../../../../../core/utils/services/shared_prefrences_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/utils/fruits_assets.dart';

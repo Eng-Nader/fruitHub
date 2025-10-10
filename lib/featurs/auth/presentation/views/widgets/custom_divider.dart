@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({

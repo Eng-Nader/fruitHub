@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/constants/constants.dart';
+import '../../../../../core/constants/constants.dart';
 
 class CustomIntinalAuthBody extends StatelessWidget {
   const CustomIntinalAuthBody({super.key, required this.children});

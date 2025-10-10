@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruithub/core/utils/fruits_assets.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
-import 'package:fruithub/featurs/auth/data/models/auth_social_model.dart';
+import '../../../../../core/utils/fruits_assets.dart';
+import '../../../../../core/utils/styles/fruits_sytls.dart';
+import '../../../data/models/auth_social_model.dart';
 
 class CustomSocialButton extends StatelessWidget {
   const CustomSocialButton({super.key, required this.title, required this.image});

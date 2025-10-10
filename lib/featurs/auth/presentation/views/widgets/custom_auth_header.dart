@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class CustomAuthHeader extends StatelessWidget {
   const CustomAuthHeader({super.key, required this.titileHeader});
