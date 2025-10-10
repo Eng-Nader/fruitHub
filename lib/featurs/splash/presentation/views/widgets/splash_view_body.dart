@@ -79,18 +79,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
           child: ScaleTransition(
             scale: animation,
             child: SvgPicture.asset(
-              Assets.imagesPlant,
+              FruitsAssets.imagesPlant,
             ),
           ),
         ),
         ScaleTransition(
           scale: animation,
           child: SvgPicture.asset(
-            Assets.imagesSplashLogo,
+            FruitsAssets.imagesSplashLogo,
           ),
         ),
         SvgPicture.asset(
-          Assets.imagesPupils,
+          FruitsAssets.imagesPupils,
         )
       ],
     );

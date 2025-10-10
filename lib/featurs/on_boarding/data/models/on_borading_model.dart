@@ -11,8 +11,8 @@ class OnBoradingModel {
 
   static List<OnBoradingModel> onboradingList = [
     OnBoradingModel(
-      Assets.imagesBackGroundPageview,
-      Assets.imagesOnBoardingFruits,
+      FruitsAssets.imagesBackGroundPageview,
+      FruitsAssets.imagesOnBoardingFruits,
       'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف \n مجموعتنا الواسعة من الفواكه الطازجة الممتازة\n واحصل على أفضل العروض والجودة العالية.',
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -45,8 +45,8 @@ class OnBoradingModel {
       ),
     ),
     const OnBoradingModel(
-      Assets.imagesBackGroundPageViewTwo,
-      Assets.imagesOnBordingAnana,
+      FruitsAssets.imagesBackGroundPageViewTwo,
+      FruitsAssets.imagesOnBordingAnana,
       'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على \nالتفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة\n المثالية',
       Text(
         'ابحث وتسوق',

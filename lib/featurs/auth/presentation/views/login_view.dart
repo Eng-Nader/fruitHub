@@ -7,6 +7,8 @@ import 'package:fruithub/core/utils/widgets/basic_button.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_header.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_text_fild.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_intinal_auth_body.dart';
+import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_social_button.dart';
+import 'package:fruithub/featurs/auth/presentation/views/widgets/social_button_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -17,7 +19,8 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> _globalKey = GlobalKey();
-  final ValueNotifier<bool> isVisible = ValueNotifier<bool>(false);
+  final ValueNotifier<bool> isVisible =
+      ValueNotifier<bool>(false); //todo step one
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,21 +41,23 @@ class _LoginViewState extends State<LoginView> {
               height: 16,
             ),
             ValueListenableBuilder(
-                valueListenable: isVisible,
-                builder: (context, value, _) {
-                  return CustomAuthTextFild(
-                    hintText: 'كلمة المرور',
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        isVisible.value = !isVisible.value;
-                      },
-                      icon: Icon(isVisible.value
-                          ? Icons.visibility
-                          : Icons.visibility_off),
-                    ),
-                    obscureText: isVisible.value ? false : true,
-                  );
-                }),
+              //todo step two with some condation
+              valueListenable: isVisible,
+              builder: (context, value, _) {
+                return CustomAuthTextFild(
+                  hintText: 'كلمة المرور',
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      isVisible.value = !isVisible.value;
+                    },
+                    icon: Icon(isVisible.value
+                        ? Icons.visibility
+                        : Icons.visibility_off),
+                  ),
+                  obscureText: isVisible.value ? false : true,
+                );
+              },
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -102,7 +107,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                 ),
               ],
-            )
+            ),
+            const SocialButtonView(),
           ],
         ),
       ),
