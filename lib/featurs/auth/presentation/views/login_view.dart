@@ -7,7 +7,9 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Login View'),
+        child: Text(
+          'Login View',
+        ),
       ),
     );
   }

@@ -9,10 +9,20 @@ class SharedPrefrencesServices {
   }
 
   static void setBool(String key, bool value) {
-    _instance.setBool(key, value);
+    _instance.setBool(
+        key, value); //todo write a bool value when show a onborading
   }
 
   static bool getBool(String key) {
-    return _instance.getBool(key) ?? false;
+    return _instance.getBool(key) ??
+        false; // todo read a bool value when show a onboradind
+  }
+
+  static void removeKey(String key) {
+    _instance.remove(key);
+  }
+
+  static void reomveAll() {
+    _instance.clear();
   }
 }
