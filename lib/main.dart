@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fruithub/core/utils/services/shared_prefrences_services.dart';
 import 'core/constants/constants.dart';
 import 'generated/l10n.dart' show S;
 
@@ -11,6 +12,7 @@ void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); // todo call a flutter engine and configration it
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await SharedPrefrencesServices.init();
   runApp(
     const FruitsHub(),
   );

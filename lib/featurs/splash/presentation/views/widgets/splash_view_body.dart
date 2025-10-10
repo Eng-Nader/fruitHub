@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/utils/fruits_assets.dart';
 
@@ -14,6 +15,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<double> animation;
+  late bool isShow;
   @override
   void initState() {
     configrationAnimation();
@@ -22,6 +24,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     exuteNavgation();
     super.initState();
   }
+
+
 
   void configrationAnimation() {
     animationController = AnimationController(

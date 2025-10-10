@@ -6,7 +6,7 @@ import '../../featurs/on_boarding/presentation/views/on_borading_view.dart';
 import '../../featurs/splash/presentation/views/splash_view.dart';
 
 class FruitRouters {
-  Route<dynamic>? generateRouter(RouteSettings settings) {
+  Route<dynamic> generateRouter(RouteSettings settings) {
     switch (settings.name) {
       case kSplshView:
         return MaterialPageRoute(
@@ -20,7 +20,10 @@ class FruitRouters {
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
         );
+      default:
+        return MaterialPageRoute(
+          builder: (_) => const Scaffold(),
+        );
     }
-    return null;
   }
 }
