@@ -15,16 +15,19 @@ class CustomAuthHeader extends StatelessWidget {
             style: FruitsSytls.styleBold19,
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: BoxBorder.all(
-              color: Colors.grey,
+        GestureDetector(
+          onTap: () => Navigator.of(context).pop(),
+          child: Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: BoxBorder.all(
+                color: Colors.grey,
+              ),
             ),
-          ),
-          child: const Icon(
-            Icons.arrow_back_ios,
+            child: const Icon(
+              Icons.arrow_back_ios,
+            ),
           ),
         )
       ],

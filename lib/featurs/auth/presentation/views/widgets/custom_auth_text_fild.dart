@@ -3,19 +3,21 @@ import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
 
 class CustomAuthTextFild extends StatelessWidget {
   const CustomAuthTextFild(
-      {super.key, required this.hintText, this.suffixIcon});
+      {super.key, required this.hintText, this.suffixIcon, this.obscureText});
   final String hintText;
   final Widget? suffixIcon;
+  final bool? obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'This Filed Is Required';
+          return 'يرجي ادخال الحقل السابق ';
         }
         return null;
       },
+      obscureText: obscureText ?? false,
       style: FruitsSytls.styleSemiBold16,
       decoration: InputDecoration(
         hintText: hintText,
