@@ -19,10 +19,10 @@ class SharedPrefrencesServices {
   }
 
   static void removeKey(String key) {
-    _instance.remove(key);
+    _instance.remove(key); // todo remove a key in  cash when logout
   }
 
   static void reomveAll() {
-    _instance.clear();
+    _instance.clear(); // todo Remove all key in the cash
   }
 }
