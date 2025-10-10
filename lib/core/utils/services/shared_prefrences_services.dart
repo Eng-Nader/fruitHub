@@ -5,14 +5,14 @@ class SharedPrefrencesServices {
 
   static Future<void> init() async {
     _instance = await SharedPreferences
-        .getInstance(); //todo to intlization a instance at once 
+        .getInstance(); //todo to intlization a instance at once
   }
 
-  void setBool(String key, bool value) {
+  static void setBool(String key, bool value) {
     _instance.setBool(key, value);
   }
 
-  bool getBool(String key) {
+  static bool getBool(String key) {
     return _instance.getBool(key) ?? false;
   }
 }

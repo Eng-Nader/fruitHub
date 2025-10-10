@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruithub/core/constants/constants.dart';
+import 'package:fruithub/core/utils/services/shared_prefrences_services.dart';
 
 import '../../../../../core/utils/styles/fruits_sytls.dart';
 
@@ -49,6 +50,7 @@ class CusotmPageViewItem extends StatelessWidget {
                       foregroundColor: Colors.black,
                     ),
                     onPressed: () {
+                      SharedPrefrencesServices.setBool(kIsBoradingSeen, true);
                       Navigator.pushReplacementNamed(context, kLoginView);
                     },
                     child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruithub/core/utils/services/shared_prefrences_services.dart';
 import '../../../../../core/constants/constants.dart';
 import '../../../../../core/utils/widgets/basic_button.dart';
 import 'dots_indecator.dart';
@@ -50,6 +51,7 @@ class _OnBoradingBodyState extends State<OnBoradingBody> {
             ),
             child: BasicButton(
               onPressed: () {
+                SharedPrefrencesServices.setBool(kIsBoradingSeen, true);
                 Navigator.pushReplacementNamed(context, kLoginView);
               },
               title: 'ابدا الان ',
