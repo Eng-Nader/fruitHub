@@ -9,7 +9,7 @@ void creatShowDialog(context) async {
       duration: Duration(seconds: 1),
       curve: Curves.easeInOut,
     ),
-    barrierDismissible: true,
+    barrierDismissible: false,
     context: context,
     builder: (context) {
       return Dialog(
