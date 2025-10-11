@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/utils/fruits_colors.dart';
-import '../../../../core/utils/styles/fruits_sytls.dart';
+import 'package:fruithub/featurs/auth/presentation/views/widgets/alrady_have_account.dart';
+import 'package:fruithub/featurs/auth/presentation/views/widgets/term_and_condation.dart';
 import '../../../../core/utils/widgets/basic_button.dart';
 import 'widgets/custom_auth_header.dart';
 import 'widgets/custom_auth_text_fild.dart';
@@ -60,84 +60,28 @@ class _SignUpViewState extends State<SignUpView> {
             const SizedBox(
               height: 16,
             ),
-            Row(
-              children: [
-                Transform.scale(
-                  scale: 1.5,
-                  child: ValueListenableBuilder(
-                      valueListenable: isChecked,
-                      builder: (context, value, child) {
-                        return Checkbox(
-                          side: const BorderSide(
-                            color: Color(0xffDDDFDF),
-                            width: 1,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          activeColor: FruitsColors.primaryColor,
-                          value: isChecked.value ? true : false,
-                          onChanged: (vlaue) {
-                            isChecked.value = !value;
-                          },
-                        );
-                      }),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      const TextSpan(
-                        text: 'من خلال إنشاء حساب ، فإنك توافق على ',
-                        style: FruitsSytls.styleSemiBold13,
-                      ),
-                      TextSpan(
-                        text: ' الشروط \nوالأحكام الخاصة بنا',
-                        style: FruitsSytls.styleSemiBold13.copyWith(
-                          color: FruitsColors.lightPrimaryColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+            ValueListenableBuilder(
+              valueListenable: isChecked,
+              builder: (context, value, _) => TermAndCondation(
+                isChecked: isChecked.value,
+                onChanged: (data) {
+                  isChecked.value = !value;
+                },
+              ),
             ),
             const SizedBox(
               height: 30,
             ),
             BasicButton(
               onPressed: () {
-                if (_globalKey.currentState!.validate()) {
-                  
-                }
+                if (_globalKey.currentState!.validate()) {}
               },
               title: 'إنشاء حساب جديد',
             ),
             const SizedBox(
               height: 26,
             ),
-            InkWell(
-              onTap: Navigator.of(context).pop,
-              child: Text.rich(
-                textAlign: TextAlign.center,
-                TextSpan(
-                  children: [
-                    const TextSpan(
-                      text: 'تمتلك حساب بالفعل؟  ',
-                      style: FruitsSytls.styleSemiBold16,
-                    ),
-                    TextSpan(
-                      text: 'تسجيل الدخول ',
-                      style: FruitsSytls.styleSemiBold16.copyWith(
-                        color: FruitsColors.lightPrimaryColor,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            )
+            const AlreadyHaveAccountWidget()
           ],
         ),
       ),
