@@ -108,7 +108,11 @@ class _SignUpViewState extends State<SignUpView> {
               height: 30,
             ),
             BasicButton(
-              onPressed: () {},
+              onPressed: () {
+                if (_globalKey.currentState!.validate()) {
+                  
+                }
+              },
               title: 'إنشاء حساب جديد',
             ),
             const SizedBox(
