@@ -4,7 +4,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/utils/services/shared_prefrences_services.dart';
 import 'core/constants/constants.dart';
 import 'generated/l10n.dart' show S;
-
 import 'core/routers/fruit_routers.dart';
 import 'firebase_options.dart';
 

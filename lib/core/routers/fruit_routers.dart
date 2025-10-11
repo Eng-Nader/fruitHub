@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:fruithub/featurs/auth/presentation/views/sign_up_view.dart';
 import '../../featurs/auth/presentation/views/login_view.dart';
 import '../constants/constants.dart';
 import '../../featurs/on_boarding/presentation/views/on_borading_view.dart';
@@ -19,6 +20,10 @@ class FruitRouters {
       case kLoginView:
         return MaterialPageRoute(
           builder: (_) => const LoginView(),
+        );
+      case kSingUpView:
+        return MaterialPageRoute(
+          builder: (_) => const SignUpView(),
         );
       default:
         return MaterialPageRoute(

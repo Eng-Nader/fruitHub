@@ -1,6 +1,5 @@
-import 'dart:isolate';
-
 import 'package:flutter/material.dart';
+import 'package:fruithub/core/constants/constants.dart';
 import '../../../../core/utils/fruits_colors.dart';
 import '../../../../core/utils/styles/fruits_sytls.dart';
 import '../../../../core/utils/widgets/basic_button.dart';
@@ -8,7 +7,6 @@ import 'widgets/custom_auth_header.dart';
 import 'widgets/custom_auth_text_fild.dart';
 import 'widgets/custom_divider.dart';
 import 'widgets/custom_intinal_auth_body.dart';
-import 'widgets/custom_social_button.dart';
 import 'widgets/social_button_view.dart';
 
 class LoginView extends StatefulWidget {
@@ -25,6 +23,7 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Form(
         key: _globalKey,
         child: CustomIntinalAuthBody(
@@ -42,7 +41,7 @@ class _LoginViewState extends State<LoginView> {
               height: 16,
             ),
             ValueListenableBuilder(
-              //todo step two with some condation
+              //todo step two with some condation without setState
               valueListenable: isVisible,
               builder: (context, value, _) {
                 return CustomAuthTextFild(
@@ -99,7 +98,9 @@ class _LoginViewState extends State<LoginView> {
                   width: 5,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, kSingUpView);
+                  },
                   child: Text(
                     'قم بانشاء حساب ',
                     style: FruitsSytls.styleSemiBold16.copyWith(
