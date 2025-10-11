@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fruithub/featurs/auth/presentation/views/forget_password_view.dart';
+import 'package:fruithub/featurs/auth/presentation/views/new_password_view.dart';
 import 'package:fruithub/featurs/auth/presentation/views/one_time_password_view.dart';
 import '../../featurs/auth/presentation/views/sign_up_view.dart';
 import '../../featurs/auth/presentation/views/login_view.dart';
@@ -34,6 +35,10 @@ class FruitRouters {
       case kOtp:
         return MaterialPageRoute(
           builder: (_) => const OneTimePasswordView(),
+        );
+      case kNewPassword:
+        return MaterialPageRoute(
+          builder: (_) => const NewPasswordView(),
         );
       default:
         return MaterialPageRoute(

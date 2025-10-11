@@ -3,6 +3,7 @@ const kOnboarding = '/onboarding';
 const kLoginView = '/loginView';
 const kSingUpView = '/signUp';
 const kForgetPasswod = '/forgetPasswod';
+const kNewPassword = '/newPassword';
 const kOtp = '/OtpView';
 const kFontFamily = 'Cairo';
 const kHorzintalPadding = 16.0;

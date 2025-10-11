@@ -3,6 +3,7 @@ class FruitsAssets {
   FruitsAssets._();
 
   static const String imagesApple = "assets/images/apple.svg";
+  static const String imageCheck = "assets/images/checkImage.svg";
 
   static const String imagesBackGroundPageViewTwo =
       "assets/images/back_ground_page_view_twosvg.svg";
