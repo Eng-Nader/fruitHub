@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruithub/core/constants/constants.dart';
 import 'widgets/dont_have_account.dart';
 import '../../../../core/utils/fruits_colors.dart';
 import '../../../../core/utils/styles/fruits_sytls.dart';
@@ -67,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
                 style: TextButton.styleFrom(
                   foregroundColor: FruitsColors.primaryColor,
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(context, kForgetPasswod),
                 child: const Text(
                   'نسيت كلمة المرور؟',
                   style: FruitsSytls.styleBold13,
