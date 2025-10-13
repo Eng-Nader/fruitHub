@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruithub/core/constants/constants.dart';
-import 'package:fruithub/core/utils/functions/show_snack_bar.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/auth_state.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/utils/functions/show_snack_bar.dart';
+import '../cubits/auth_cubit.dart';
+import '../cubits/auth_state.dart';
 import 'widgets/dont_have_account.dart';
 import '../../../../core/utils/fruits_colors.dart';
 import '../../../../core/utils/styles/fruits_sytls.dart';

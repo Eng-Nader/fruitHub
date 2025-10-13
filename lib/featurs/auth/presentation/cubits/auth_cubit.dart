@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruithub/core/errors/failure.dart';
-import 'package:fruithub/featurs/auth/data/repos/auth_repo_implemtaion.dart';
-import 'package:fruithub/featurs/auth/domain/repos/auth_repos.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/auth_state.dart';
+import '../../../../core/errors/failure.dart';
+import '../../data/repos/auth_repo_implemtaion.dart';
+import '../../domain/repos/auth_repos.dart';
+import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this.authRepoImplemtaion) : super(AuthIntinalState());

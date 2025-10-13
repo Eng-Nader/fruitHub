@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fruithub/core/errors/custom_exception.dart';
+import '../../../../core/errors/custom_exception.dart';
 
 class FirebaseAuthServes {
   Future<User> createEmialAndPassword(
@@ -42,6 +42,9 @@ class FirebaseAuthServes {
             exceptionMessage: 'المستحدم الذي تم تسجيه غير موجود ');
       } else if (e.code == 'wrong-password') {
         throw CustomException(exceptionMessage: 'كلمه المرور خاطئه');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(
+            exceptionMessage: 'الرجاء التحقق من الاتصال بالانترنت');
       } else {
         throw CustomException(
             exceptionMessage: 'يوجد خطا ما يرجي المحاوله لاحقا ');

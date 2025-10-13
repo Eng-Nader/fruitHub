@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
+import '../../../../../core/utils/fruits_colors.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class CustomPinCodeFild extends StatelessWidget {

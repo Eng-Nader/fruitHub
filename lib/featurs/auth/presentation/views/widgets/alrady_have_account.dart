@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../../../../../core/utils/fruits_colors.dart';
+import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class AlreadyHaveAccountWidget extends StatelessWidget {
   const AlreadyHaveAccountWidget({

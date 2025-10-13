@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruithub/core/utils/fruits_assets.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../fruits_assets.dart';
+import '../styles/fruits_sytls.dart';
 
 void creatShowDialog(context) async {
   await showDialog(

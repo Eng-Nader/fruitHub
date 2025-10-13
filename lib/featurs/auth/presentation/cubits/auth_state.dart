@@ -1,6 +1,6 @@
-import 'package:fruithub/core/errors/failure.dart';
-import 'package:fruithub/featurs/auth/data/models/user_model.dart';
-import 'package:fruithub/featurs/auth/domain/entities/user_entity.dart';
+import '../../../../core/errors/failure.dart';
+import '../../data/models/user_model.dart';
+import '../../domain/entities/user_entity.dart';
 
 abstract class AuthState {}
 

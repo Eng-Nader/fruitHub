@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/constants/constants.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
-import 'package:fruithub/core/utils/widgets/basic_button.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_header.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_text_fild.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_intinal_auth_body.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/utils/styles/fruits_sytls.dart';
+import '../../../../core/utils/widgets/basic_button.dart';
+import 'widgets/custom_auth_header.dart';
+import 'widgets/custom_auth_text_fild.dart';
+import 'widgets/custom_intinal_auth_body.dart';
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruithub/core/constants/constants.dart';
-import 'package:fruithub/core/utils/fruits_assets.dart';
-import 'package:fruithub/core/utils/functions/create_show_dialog.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
-import 'package:fruithub/core/utils/widgets/basic_button.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_header.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_auth_text_fild.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/custom_intinal_auth_body.dart';
+import '../../../../core/constants/constants.dart';
+import '../../../../core/utils/fruits_assets.dart';
+import '../../../../core/utils/functions/create_show_dialog.dart';
+import '../../../../core/utils/styles/fruits_sytls.dart';
+import '../../../../core/utils/widgets/basic_button.dart';
+import 'widgets/custom_auth_header.dart';
+import 'widgets/custom_auth_text_fild.dart';
+import 'widgets/custom_intinal_auth_body.dart';
 
 class NewPasswordView extends StatelessWidget {
   const NewPasswordView({super.key});

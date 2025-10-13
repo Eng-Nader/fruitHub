@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fruithub/core/errors/custom_exception.dart';
-import 'package:fruithub/core/errors/failure.dart';
-import 'package:fruithub/featurs/auth/data/models/user_model.dart';
-import 'package:fruithub/featurs/auth/data/services/firebase_auth_serves.dart';
-import 'package:fruithub/featurs/auth/domain/entities/user_entity.dart';
-import 'package:fruithub/featurs/auth/domain/repos/auth_repos.dart';
+import '../../../../core/errors/custom_exception.dart';
+import '../../../../core/errors/failure.dart';
+import '../models/user_model.dart';
+import '../services/firebase_auth_serves.dart';
+import '../../domain/entities/user_entity.dart';
+import '../../domain/repos/auth_repos.dart';
 
 class AuthRepoImplemtaion extends AuthRepos {
   final FirebaseAuthServes firebaseAuthServes;

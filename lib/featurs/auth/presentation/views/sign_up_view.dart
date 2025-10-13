@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruithub/core/utils/functions/show_snack_bar.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/auth_state.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/alrady_have_account.dart';
-import 'package:fruithub/featurs/auth/presentation/views/widgets/term_and_condation.dart';
+import '../../../../core/utils/functions/show_snack_bar.dart';
+import '../cubits/auth_cubit.dart';
+import '../cubits/auth_state.dart';
+import 'widgets/alrady_have_account.dart';
+import 'widgets/term_and_condation.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../core/utils/widgets/basic_button.dart';
 import 'widgets/custom_auth_header.dart';
