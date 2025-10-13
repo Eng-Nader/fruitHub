@@ -71,28 +71,30 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: ScaleTransition(
-            scale: animation,
-            child: SvgPicture.asset(
-              FruitsAssets.imagesPlant,
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: ScaleTransition(
+              scale: animation,
+              child: SvgPicture.asset(
+                FruitsAssets.imagesPlant,
+              ),
             ),
           ),
-        ),
-        ScaleTransition(
-          scale: animation,
-          child: SvgPicture.asset(
-            FruitsAssets.imagesSplashLogo,
+          ScaleTransition(
+            scale: animation,
+            child: SvgPicture.asset(
+              FruitsAssets.imagesSplashLogo,
+            ),
           ),
-        ),
-        SvgPicture.asset(
-          FruitsAssets.imagesPupils,
-        )
-      ],
+          SvgPicture.asset(
+            FruitsAssets.imagesPupils,
+          )
+        ],
+      ),
     );
   }
 }

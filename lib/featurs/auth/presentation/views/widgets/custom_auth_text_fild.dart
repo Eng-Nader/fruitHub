@@ -9,12 +9,14 @@ class CustomAuthTextFild extends StatelessWidget {
       this.suffixIcon,
       this.obscureText,
       this.onSaved,
-      this.controller});
+      this.controller,
+     });
   final String hintText;
   final Widget? suffixIcon;
   final bool? obscureText;
   final Function(String?)? onSaved;
   final TextEditingController? controller;
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class CustomAuthTextFild extends StatelessWidget {
         if (value == null || value.isEmpty) {
           return 'يرجي ادخال الحقل السابق ';
         }
+
         return null;
       },
       obscureText: obscureText ?? false,
