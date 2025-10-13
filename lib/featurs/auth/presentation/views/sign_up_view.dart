@@ -102,9 +102,8 @@ class _SignUpViewState extends State<SignUpView> {
                 if (_globalKey.currentState!.validate()) {
                   _globalKey.currentState!.save();
                   if (isChecked.value) {
-                    context
-                        .read<AuthCubit>()
-                        .createEmialAndPassword(email, password, name);
+                    context.read<AuthCubit>().createEmialAndPassword(
+                        email.trim(), password.trim(), name.trim());
                   } else {
                     showSnackBar(
                         context, 'يجب عليك الموافقه علي الشروط والاحكام ');

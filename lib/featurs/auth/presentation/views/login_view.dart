@@ -108,7 +108,7 @@ class _LoginViewState extends State<LoginView> {
 
                       context
                           .read<AuthCubit>()
-                          .signInEmailAndPassword(email, password);
+                          .signInEmailAndPassword(email.trim(), password.toString());
                     }
                   },
                   title: 'تسجيل دخول',

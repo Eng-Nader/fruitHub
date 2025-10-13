@@ -22,6 +22,7 @@ class AuthRepoImplemtaion extends AuthRepos {
         UserModel.fromFirebaseSevices(user),
       );
     } on CustomException catch (e) {
+      // todo  in e object is all custom exception message
       log('this problem is find in AuthRepeImplemtation and is ${e.toString()}');
 
       return left(
