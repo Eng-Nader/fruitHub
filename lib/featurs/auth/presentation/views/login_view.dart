@@ -25,7 +25,8 @@ class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> _globalKey = GlobalKey();
   final ValueNotifier<bool> isVisible =
       ValueNotifier<bool>(false); //todo step one
-  late String email, password;
+  final TextEditingController _emialController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +43,7 @@ class _LoginViewState extends State<LoginView> {
               height: 24,
             ),
             CustomAuthTextFild(
-              onSaved: (value) {
-                email = value!;
-              },
+              controller: _emialController,
               hintText: 'البريد الإلكتروني',
             ),
             const SizedBox(
@@ -55,9 +54,7 @@ class _LoginViewState extends State<LoginView> {
               valueListenable: isVisible,
               builder: (context, value, _) {
                 return CustomAuthTextFild(
-                  onSaved: (value) {
-                    password = value!;
-                  },
+                  controller: _passwordController,
                   hintText: 'كلمة المرور',
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -104,11 +101,9 @@ class _LoginViewState extends State<LoginView> {
                   isLoading: state is AuthLoadingState ? true : false,
                   onPressed: () {
                     if (_globalKey.currentState!.validate()) {
-                      _globalKey.currentState!.save();
-
-                      context
-                          .read<AuthCubit>()
-                          .signInEmailAndPassword(email.trim(), password.toString());
+                      context.read<AuthCubit>().signInEmailAndPassword(
+                          _emialController.text.trim(),
+                          _passwordController.text.trim());
                     }
                   },
                   title: 'تسجيل دخول',
@@ -120,6 +115,8 @@ class _LoginViewState extends State<LoginView> {
             ),
             DontHaveAccountWidget(
               onPressed: () {
+                _emialController.clear();
+                _passwordController.clear();
                 Navigator.pushNamed(context, kSingUpView);
               },
             ),

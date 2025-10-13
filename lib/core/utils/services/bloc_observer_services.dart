@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthObserver implements BlocObserver {
+class BlocObserverServices implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
     log('change of Auth cubit is $change');

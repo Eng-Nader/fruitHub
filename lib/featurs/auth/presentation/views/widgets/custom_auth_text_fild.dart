@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:fruithub/core/utils/fruits_colors.dart';
 import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class CustomAuthTextFild extends StatelessWidget {
   const CustomAuthTextFild(
-      {super.key, required this.hintText, this.suffixIcon, this.obscureText, this.onSaved, this.controller});
+      {super.key,
+      required this.hintText,
+      this.suffixIcon,
+      this.obscureText,
+      this.onSaved,
+      this.controller});
   final String hintText;
   final Widget? suffixIcon;
   final bool? obscureText;
-  final Function(String?)? onSaved; 
-  final TextEditingController? controller; 
+  final Function(String?)? onSaved;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller ,
-      onSaved: onSaved ,
+      cursorColor: FruitsColors.primaryColor,
+      controller: controller,
+      onSaved: onSaved,
       onTapOutside: (_) {
         FocusManager.instance.primaryFocus!.unfocus();
       },

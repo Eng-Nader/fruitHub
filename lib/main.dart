@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/utils/services/server_locator_services.dart';
 import 'featurs/auth/data/repos/auth_repo_implemtaion.dart';
 import 'featurs/auth/presentation/cubits/auth_cubit.dart';
-import 'featurs/auth/presentation/cubits/auth_observer.dart';
+import 'core/utils/services/bloc_observer_services.dart';
 import 'core/utils/services/shared_prefrences_services.dart';
 import 'core/constants/constants.dart';
 import 'generated/l10n.dart' show S;
@@ -20,7 +20,7 @@ void main() async {
   runApp(
     const FruitsHub(),
   );
-  Bloc.observer = AuthObserver();
+  Bloc.observer = BlocObserverServices();
   configrationInjection();
 }
 
