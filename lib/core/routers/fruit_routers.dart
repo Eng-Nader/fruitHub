@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/core/utils/services/server_locator_services.dart';
+import 'package:fruithub/featurs/auth/data/repos/auth_repo_implemtaion.dart';
+import 'package:fruithub/featurs/auth/data/services/firebase_auth_serves.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
 import 'package:fruithub/featurs/auth/presentation/views/forget_password_view.dart';
 import 'package:fruithub/featurs/auth/presentation/views/new_password_view.dart';
 import 'package:fruithub/featurs/auth/presentation/views/one_time_password_view.dart';
@@ -26,7 +31,12 @@ class FruitRouters {
         );
       case kSingUpView:
         return MaterialPageRoute(
-          builder: (_) => const SignUpView(),
+          builder: (_) => BlocProvider(
+            create: (context) => AuthCubit(
+              getit<AuthRepoImplemtaion>(),
+            ),
+            child: const SignUpView(),
+          ),
         );
       case kForgetPasswod:
         return MaterialPageRoute(

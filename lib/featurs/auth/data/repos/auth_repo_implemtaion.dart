@@ -22,7 +22,7 @@ class AuthRepoImplemtaion extends AuthRepos {
     } on CustomException catch (e) {
       return left(
         ServerFailure(
-          e.toString(),
+      e.toString(),
         ),
       );
     }

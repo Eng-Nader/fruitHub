@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruithub/core/errors/custom_exception.dart';
 
@@ -13,18 +15,20 @@ class FirebaseAuthServes {
       return credential.user!;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        throw CustomException(
-            exceptionMessage: 'The password provided is too weak.');
+        throw CustomException(exceptionMessage: 'كلمه المرور ضعيفه');
       } else if (e.code == 'email-already-in-use') {
+        throw CustomException(exceptionMessage: 'هذا الحساب مستخدم بالفعل');
+      } else if (e.code == 'network-request-failed') {
         throw CustomException(
-            exceptionMessage: 'The account already exists for that email.');
+            exceptionMessage: 'الرجاء التحقق من الاتصال بالانترنت');
       } else {
         throw CustomException(
-            exceptionMessage: 'There Are An Error, please try Again later !');
+            exceptionMessage: 'يوجد خطا ما الرجاء المحاوله مره اخره لاحقا  !');
       }
     } catch (e) {
+      log(e.toString());
       throw CustomException(
-          exceptionMessage: 'There Are An Error, please try Again later !');
+          exceptionMessage: 'يوجد خطا ما الرجاء المحاوله مره اخره لاحقا  !');
     }
   }
 }

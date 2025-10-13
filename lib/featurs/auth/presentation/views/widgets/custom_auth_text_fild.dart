@@ -3,14 +3,16 @@ import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class CustomAuthTextFild extends StatelessWidget {
   const CustomAuthTextFild(
-      {super.key, required this.hintText, this.suffixIcon, this.obscureText});
+      {super.key, required this.hintText, this.suffixIcon, this.obscureText, this.onSaved});
   final String hintText;
   final Widget? suffixIcon;
   final bool? obscureText;
+  final Function(String?)? onSaved; 
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved ,
       onTapOutside: (_) {
         FocusManager.instance.primaryFocus!.unfocus();
       },
