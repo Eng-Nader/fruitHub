@@ -4,4 +4,8 @@ class UserEntity {
   final String id;
 
   UserEntity({required this.email, required this.id, required this.name});
+
+
+ 
 }
+
