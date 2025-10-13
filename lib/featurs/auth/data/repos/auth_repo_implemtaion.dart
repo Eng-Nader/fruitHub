@@ -22,9 +22,21 @@ class AuthRepoImplemtaion extends AuthRepos {
     } on CustomException catch (e) {
       return left(
         ServerFailure(
-      e.toString(),
+          e.toString(),
         ),
       );
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInEmialAndPassword(
+      String email, String password) async {
+    try {
+      final user =
+          await firebaseAuthServes.signInEmailAndPassword(email, password);
+      return right(UserModel.fromFirebaseSevices(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(e.toString()));
     }
   }
 }

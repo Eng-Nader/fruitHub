@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/core/utils/functions/show_snack_bar.dart';
 import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
 import 'package:fruithub/featurs/auth/presentation/cubits/auth_state.dart';
 import 'package:fruithub/featurs/auth/presentation/views/widgets/alrady_have_account.dart';
@@ -89,9 +90,10 @@ class _SignUpViewState extends State<SignUpView> {
           BlocConsumer<AuthCubit, AuthState>(
             listener: (context, state) {
               if (state is SignUpAuthState) {
-                createSnackBar(context, 'تم تسجيل حساب جديد بنجاح ');
+                showSnackBar(context, 'تم تسجيل حساب جديد بنجاح ');
+                Navigator.pop(context);
               } else if (state is AuthFailureState) {
-                createSnackBar(context, state.errorMessage);
+                showSnackBar(context, state.errorMessage);
               }
             },
             builder: (context, state) => BasicButton(
@@ -115,13 +117,4 @@ class _SignUpViewState extends State<SignUpView> {
       ),
     ));
   }
-}
-
-void createSnackBar(context, String title) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      action: SnackBarAction(label: 'حزف', onPressed: () {}),
-      content: Text(title),
-    ),
-  );
 }

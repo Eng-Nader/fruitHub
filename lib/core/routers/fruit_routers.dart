@@ -8,6 +8,7 @@ import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
 import 'package:fruithub/featurs/auth/presentation/views/forget_password_view.dart';
 import 'package:fruithub/featurs/auth/presentation/views/new_password_view.dart';
 import 'package:fruithub/featurs/auth/presentation/views/one_time_password_view.dart';
+import 'package:fruithub/featurs/home/presentation/views/home_view.dart';
 import '../../featurs/auth/presentation/views/sign_up_view.dart';
 import '../../featurs/auth/presentation/views/login_view.dart';
 import '../constants/constants.dart';
@@ -31,12 +32,7 @@ class FruitRouters {
         );
       case kSingUpView:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => AuthCubit(
-              getit<AuthRepoImplemtaion>(),
-            ),
-            child: const SignUpView(),
-          ),
+          builder: (_) => const SignUpView(),
         );
       case kForgetPasswod:
         return MaterialPageRoute(
@@ -49,6 +45,10 @@ class FruitRouters {
       case kNewPassword:
         return MaterialPageRoute(
           builder: (_) => const NewPasswordView(),
+        );
+      case kHomeView:
+        return MaterialPageRoute(
+          builder: (_) => const HomeView(),
         );
       default:
         return MaterialPageRoute(

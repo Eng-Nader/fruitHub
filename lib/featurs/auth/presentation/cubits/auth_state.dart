@@ -15,3 +15,9 @@ class AuthFailureState extends AuthState{
    final String errorMessage; 
   AuthFailureState(this.errorMessage); 
 }
+
+
+class SignInAuthState extends AuthState{ 
+  final UserEntity userEntity ; 
+  SignInAuthState(this.userEntity); 
+}

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruithub/core/constants/constants.dart';
+import 'package:fruithub/core/utils/functions/show_snack_bar.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/auth_cubit.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/auth_state.dart';
 import 'widgets/dont_have_account.dart';
 import '../../../../core/utils/fruits_colors.dart';
 import '../../../../core/utils/styles/fruits_sytls.dart';
@@ -21,6 +25,7 @@ class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> _globalKey = GlobalKey();
   final ValueNotifier<bool> isVisible =
       ValueNotifier<bool>(false); //todo step one
+  late String email, password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +40,10 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(
               height: 24,
             ),
-            const CustomAuthTextFild(
+            CustomAuthTextFild(
+              onSaved: (value) {
+                email = value!;
+              },
               hintText: 'البريد الإلكتروني',
             ),
             const SizedBox(
@@ -46,6 +54,9 @@ class _LoginViewState extends State<LoginView> {
               valueListenable: isVisible,
               builder: (context, value, _) {
                 return CustomAuthTextFild(
+                  onSaved: (value) {
+                    password = value!;
+                  },
                   hintText: 'كلمة المرور',
                   suffixIcon: IconButton(
                     onPressed: () {
@@ -78,11 +89,29 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(
               height: 20,
             ),
-            BasicButton(
-              onPressed: () {
-                if (_globalKey.currentState!.validate()) {}
+            BlocConsumer<AuthCubit, AuthState>(
+              listener: (context, state) {
+                if (state is SignInAuthState) {
+                  showSnackBar(context, 'تم تسجيل الدخول بنجاح ');
+                  Navigator.pushReplacementNamed(context, kHomeView);
+                } else if (state is AuthFailureState) {
+                  showSnackBar(context, state.errorMessage);
+                }
               },
-              title: 'تسجيل دخول',
+              builder: (context, state) {
+                return BasicButton(
+                  isLoading: state is AuthLoadingState ? true : false,
+                  onPressed: () {
+                    if (_globalKey.currentState!.validate()) {
+                      _globalKey.currentState!.save();
+                      context
+                          .read<AuthCubit>()
+                          .signInEmailAndPassword(email, password);
+                    }
+                  },
+                  title: 'تسجيل دخول',
+                );
+              },
             ),
             const SizedBox(
               height: 20,
