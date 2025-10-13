@@ -101,9 +101,14 @@ class _SignUpViewState extends State<SignUpView> {
               onPressed: () {
                 if (_globalKey.currentState!.validate()) {
                   _globalKey.currentState!.save();
-                  context
-                      .read<AuthCubit>()
-                      .createEmialAndPassword(email, password, name);
+                  if (isChecked.value) {
+                    context
+                        .read<AuthCubit>()
+                        .createEmialAndPassword(email, password, name);
+                  } else {
+                    showSnackBar(
+                        context, 'يجب عليك الموافقه علي الشروط والاحكام ');
+                  }
                 }
               },
               title: 'إنشاء حساب جديد',
