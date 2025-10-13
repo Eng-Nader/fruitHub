@@ -5,8 +5,9 @@ import '../../../../../core/utils/styles/fruits_sytls.dart';
 
 class DontHaveAccountWidget extends StatelessWidget {
   const DontHaveAccountWidget({
-    super.key,
+    super.key, required this.onPressed,
   });
+  final VoidCallback onPressed ; 
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +23,7 @@ class DontHaveAccountWidget extends StatelessWidget {
           width: 5,
         ),
         GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, kSingUpView);
-          },
+          onTap:onPressed , 
           child: Text(
             'قم بانشاء حساب ',
             style: FruitsSytls.styleSemiBold16.copyWith(

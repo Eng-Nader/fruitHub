@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/errors/custom_exception.dart';
@@ -20,6 +22,8 @@ class AuthRepoImplemtaion extends AuthRepos {
         UserModel.fromFirebaseSevices(user),
       );
     } on CustomException catch (e) {
+      log('this problem is find in AuthRepeImplemtation and is ${e.toString()}');
+
       return left(
         ServerFailure(
           e.toString(),
@@ -36,6 +40,8 @@ class AuthRepoImplemtaion extends AuthRepos {
           await firebaseAuthServes.signInEmailAndPassword(email, password);
       return right(UserModel.fromFirebaseSevices(user));
     } on CustomException catch (e) {
+      log('this problem is find in AuthRepeImplemtation and is ${e.toString()}');
+
       return left(ServerFailure(e.toString()));
     }
   }

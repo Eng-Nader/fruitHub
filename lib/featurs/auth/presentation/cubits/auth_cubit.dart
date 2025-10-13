@@ -6,7 +6,7 @@ import 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this.authRepoImplemtaion) : super(AuthIntinalState());
-  final AuthRepos authRepoImplemtaion;
+  final AuthRepoImplemtaion authRepoImplemtaion;
 
   Future<void> createEmialAndPassword(
       String email, String password, String name) async {

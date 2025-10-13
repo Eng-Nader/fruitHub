@@ -14,6 +14,8 @@ class FirebaseAuthServes {
       );
       return credential.user!;
     } on FirebaseAuthException catch (e) {
+                  log('this problem is find in FirebaseAuthServerice and is ${e.toString()}'); 
+
       if (e.code == 'weak-password') {
         throw CustomException(exceptionMessage: 'كلمه المرور ضعيفه');
       } else if (e.code == 'email-already-in-use') {
@@ -26,6 +28,8 @@ class FirebaseAuthServes {
             exceptionMessage: 'يوجد خطا ما الرجاء المحاوله مره اخره لاحقا  !');
       }
     } catch (e) {
+                  log('this problem is find in FirebaseAuthServerice and is ${e.toString()}'); 
+
       throw CustomException(
           exceptionMessage: 'يوجد خطا ما الرجاء المحاوله مره اخره لاحقا  !');
     }
@@ -37,6 +41,7 @@ class FirebaseAuthServes {
           .signInWithEmailAndPassword(email: email, password: password);
       return credential.user!;
     } on FirebaseAuthException catch (e) {
+      log('this problem is find in FirebaseAuthServerice and is ${e.toString()}'); 
       if (e.code == 'user-not-found') {
         throw CustomException(
             exceptionMessage: 'المستحدم الذي تم تسجيه غير موجود ');
@@ -50,6 +55,8 @@ class FirebaseAuthServes {
             exceptionMessage: 'يوجد خطا ما يرجي المحاوله لاحقا ');
       }
     } catch (e) {
+            log('this problem is find in FirebaseAuthServerice and is ${e.toString()}'); 
+
       throw CustomException(
           exceptionMessage: 'يوجد خطا ما يرجي المحاوله لاحقا ');
     }

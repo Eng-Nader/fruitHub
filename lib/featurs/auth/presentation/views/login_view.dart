@@ -26,6 +26,7 @@ class _LoginViewState extends State<LoginView> {
   final ValueNotifier<bool> isVisible =
       ValueNotifier<bool>(false); //todo step one
   late String email, password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,6 +105,7 @@ class _LoginViewState extends State<LoginView> {
                   onPressed: () {
                     if (_globalKey.currentState!.validate()) {
                       _globalKey.currentState!.save();
+
                       context
                           .read<AuthCubit>()
                           .signInEmailAndPassword(email, password);
@@ -116,7 +118,11 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(
               height: 20,
             ),
-            const DontHaveAccountWidget(),
+            DontHaveAccountWidget(
+              onPressed: () {
+                Navigator.pushNamed(context, kSingUpView);
+              },
+            ),
             const SizedBox(
               height: 37,
             ),
