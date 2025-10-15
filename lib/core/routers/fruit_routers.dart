@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/signup_cubit/sign_up_cubit.dart';
+import '../../featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
+import '../../featurs/auth/presentation/cubits/signup_cubit/sign_up_cubit.dart';
 import '../utils/services/server_locator_services.dart';
 import '../../featurs/auth/data/repos/auth_repo_implemtaion.dart';
 import '../../featurs/auth/data/services/firebase_auth_serves.dart';
-import '../../featurs/auth/presentation/cubits/auth_cubit.dart';
 import '../../featurs/auth/presentation/views/forget_password_view.dart';
 import '../../featurs/auth/presentation/views/new_password_view.dart';
 import '../../featurs/auth/presentation/views/one_time_password_view.dart';

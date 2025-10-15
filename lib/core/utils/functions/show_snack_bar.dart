@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../fruits_colors.dart';
+import '../styles/fruits_sytls.dart';
 
 void showSnackBar(context, String title) {
   ScaffoldMessenger.of(context).showSnackBar(

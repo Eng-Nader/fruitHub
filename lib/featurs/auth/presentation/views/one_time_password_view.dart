@@ -22,7 +22,7 @@ class OneTimePasswordView extends StatelessWidget {
             height: 24,
           ),
           const Text(
-            'أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي Maxxx@email.com',
+            'أدخل الرمز الذي أرسلناه إلى عنوان بريد التاليMaxxx@email.com',
           ),
           const SizedBox(
             height: 30,

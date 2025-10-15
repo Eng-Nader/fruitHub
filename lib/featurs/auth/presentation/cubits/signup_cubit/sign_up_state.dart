@@ -1,4 +1,4 @@
-import 'package:fruithub/featurs/auth/domain/entities/user_entity.dart';
+import '../../../domain/entities/user_entity.dart';
 
 abstract class SignUpState {}
 
