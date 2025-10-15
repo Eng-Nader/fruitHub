@@ -32,6 +32,7 @@ class SocialButtonView extends StatelessWidget {
                 bottom: 16,
               ),
               child: CustomSocialButton(
+                
                 title: socials[index].title,
                 image: socials[index].image,
               ),
