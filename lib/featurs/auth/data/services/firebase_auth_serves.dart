@@ -1,5 +1,5 @@
 import 'dart:developer';
-
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/errors/custom_exception.dart';
 
@@ -16,7 +16,7 @@ class FirebaseAuthServes {
     } on FirebaseAuthException catch (e) {
       log('this problem is find in FirebaseAuthServerice and is ${e.toString()}');
 
-      if (e.code == 'weak-password') {
+    if (e.code == 'weak-password') {
         throw CustomException(exceptionMessage: 'كلمه المرور ضعيفه');
       } else if (e.code == 'email-already-in-use') {
         throw CustomException(exceptionMessage: 'هذا الحساب مستخدم بالفعل');
@@ -66,4 +66,23 @@ class FirebaseAuthServes {
           exceptionMessage: 'يوجد خطا ما يرجي المحاوله لاحقا ');
     }
   }
+
+Future<User> signInWithGoogle() async {
+  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  
+
+  final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+  
+
+  final credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth?.accessToken,
+    idToken: googleAuth?.idToken,
+  );
+  final userCredential =await FirebaseAuth.instance.signInWithCredential(credential);
+
+  return userCredential.user!;
+}
+
+ 
+
 }
