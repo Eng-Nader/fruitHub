@@ -1,28 +1,44 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import '../../../../../core/utils/fruits_assets.dart';
 import '../../../data/models/auth_social_model.dart';
 import 'custom_social_button.dart';
 
 class SocialButtonView extends StatelessWidget {
   const SocialButtonView({super.key});
-  static const List<AuthSocialModel> socials = [
-    AuthSocialModel(
-      image: FruitsAssets.imagesGoogle,
-      title: 'تسجيل بواسطة جوجل',
-    ),
-    AuthSocialModel(
-      image: FruitsAssets.imagesApple,
-      title: 'تسجيل بواسطه ابل ',
-    ),
-    AuthSocialModel(
-      image: FruitsAssets.imagesFacebook,
-      title: 'تسجيل بواسطة فيسبوك',
-    ),
-  ];
+
+  List<AuthSocialModel> buildSocials(BuildContext context) {
+    return [
+      AuthSocialModel(
+        onPressen: () {
+          context.read<LoginCubit>().loginWithGoogle();
+        },
+        image: FruitsAssets.imagesGoogle,
+        title: 'تسجيل بواسطة جوجل',
+      ),
+      AuthSocialModel(
+        onPressen: () {
+          log('this is apple onPresesd ');
+        },
+        image: FruitsAssets.imagesApple,
+        title: 'تسجيل بواسطه ابل ',
+      ),
+      AuthSocialModel(
+        onPressen: () {
+          log('this is facebook onPresesd ');
+        },
+        image: FruitsAssets.imagesFacebook,
+        title: 'تسجيل بواسطة فيسبوك',
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    final socials = buildSocials(context);
+     return Column(
       children: [
         ...List.generate(
           socials.length,
@@ -32,7 +48,7 @@ class SocialButtonView extends StatelessWidget {
                 bottom: 16,
               ),
               child: CustomSocialButton(
-                
+                onPressed: socials[index].onPressen,
                 title: socials[index].title,
                 image: socials[index].image,
               ),
