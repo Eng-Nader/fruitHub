@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/signup_cubit/sign_up_cubit.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/signup_cubit/sign_up_state.dart';
 import '../../../../core/utils/functions/show_snack_bar.dart';
-import '../cubits/auth_cubit.dart';
-import '../cubits/auth_state.dart';
 import 'widgets/alrady_have_account.dart';
 import 'widgets/term_and_condation.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -87,22 +87,22 @@ class _SignUpViewState extends State<SignUpView> {
           const SizedBox(
             height: 30,
           ),
-          BlocConsumer<AuthCubit, AuthState>(
+          BlocConsumer<SignUpCubit, SignUpState>(
             listener: (context, state) {
-              if (state is SignUpAuthState) {
+              if (state is SignUPSucessState) {
                 showSnackBar(context, 'تم تسجيل حساب جديد بنجاح ');
                 Navigator.pop(context);
-              } else if (state is AuthFailureState) {
+              } else if (state is SignUPFailureState) {
                 showSnackBar(context, state.errorMessage);
               }
             },
             builder: (context, state) => BasicButton(
-              isLoading: state is AuthLoadingState ? true : false,
+              isLoading: state is SignUPLoadingState ? true : false,
               onPressed: () {
                 if (_globalKey.currentState!.validate()) {
                   _globalKey.currentState!.save();
                   if (isChecked.value) {
-                    context.read<AuthCubit>().createEmialAndPassword(
+                    context.read<SignUpCubit>().createWithEmialAndPassword(
                         email.trim(), password.trim(), name.trim());
                   } else {
                     showSnackBar(

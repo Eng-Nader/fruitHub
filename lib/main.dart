@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/utils/services/server_locator_services.dart';
-import 'featurs/auth/data/repos/auth_repo_implemtaion.dart';
-import 'featurs/auth/presentation/cubits/auth_cubit.dart';
 import 'core/utils/services/bloc_observer_services.dart';
 import 'core/utils/services/shared_prefrences_services.dart';
 import 'core/constants/constants.dart';
@@ -29,26 +27,21 @@ class FruitsHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit(
-        getit<AuthRepoImplemtaion>(),
+    return MaterialApp(
+      locale: const Locale('ar'),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      theme: ThemeData(
+        fontFamily: kFontFamily,
+        scaffoldBackgroundColor: Colors.white,
       ),
-      child: MaterialApp(
-        locale: const Locale('ar'),
-        localizationsDelegates: [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        theme: ThemeData(
-          fontFamily: kFontFamily,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        supportedLocales: S.delegate.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: FruitRouters().generateRouter,
-      ),
+      supportedLocales: S.delegate.supportedLocales,
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: FruitRouters().generateRouter,
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
+import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_state.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../core/utils/functions/show_snack_bar.dart';
-import '../cubits/auth_cubit.dart';
-import '../cubits/auth_state.dart';
 import 'widgets/dont_have_account.dart';
 import '../../../../core/utils/fruits_colors.dart';
 import '../../../../core/utils/styles/fruits_sytls.dart';
@@ -87,21 +87,21 @@ class _LoginViewState extends State<LoginView> {
             const SizedBox(
               height: 20,
             ),
-            BlocConsumer<AuthCubit, AuthState>(
+            BlocConsumer<LoginCubit, LoginState>(
               listener: (context, state) {
-                if (state is SignInAuthState) {
+                if (state is LoginSucessState) {
                   showSnackBar(context, 'تم تسجيل الدخول بنجاح ');
                   Navigator.pushReplacementNamed(context, kHomeView);
-                } else if (state is AuthFailureState) {
+                } else if (state is LoginFailureState) {
                   showSnackBar(context, state.errorMessage);
                 }
               },
               builder: (context, state) {
                 return BasicButton(
-                  isLoading: state is AuthLoadingState ? true : false,
+                  isLoading: state is LoginLoadingState ? true : false,
                   onPressed: () {
                     if (_globalKey.currentState!.validate()) {
-                      context.read<AuthCubit>().signInEmailAndPassword(
+                      context.read<LoginCubit>().loginWithEmailAndPassword(
                           _emialController.text.trim(),
                           _passwordController.text.trim());
                     }
