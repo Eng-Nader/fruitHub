@@ -20,7 +20,7 @@ class SocialButtonView extends StatelessWidget {
       ),
       AuthSocialModel(
         onPressen: () {
-          log('this is apple onPresesd ');
+          context.read<LoginCubit>().loginWithFacebook();
         },
         image: FruitsAssets.imagesApple,
         title: 'تسجيل بواسطه ابل ',
@@ -38,7 +38,7 @@ class SocialButtonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final socials = buildSocials(context);
-     return Column(
+    return Column(
       children: [
         ...List.generate(
           socials.length,

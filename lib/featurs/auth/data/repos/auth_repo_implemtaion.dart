@@ -60,4 +60,16 @@ class AuthRepoImplemtaion extends AuthRepos {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signinWithFacebook() async {
+    try {
+      final user = await firebaseAuthServes.signInWithFacebook();
+      return right(UserModel.fromFirebaseSevices(user));
+    } catch (e) {
+      return left(
+        ServerFailure('حدث خطا ما يرجي المحاوله لاحقا '),
+      );
+    }
+  }
 }
