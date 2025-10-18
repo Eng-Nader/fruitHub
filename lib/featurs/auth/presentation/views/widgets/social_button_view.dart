@@ -19,15 +19,13 @@ class SocialButtonView extends StatelessWidget {
         title: 'تسجيل بواسطة جوجل',
       ),
       AuthSocialModel(
-        onPressen: () {
-          context.read<LoginCubit>().loginWithFacebook();
-        },
+        onPressen: () {},
         image: FruitsAssets.imagesApple,
         title: 'تسجيل بواسطه ابل ',
       ),
       AuthSocialModel(
         onPressen: () {
-          log('this is facebook onPresesd ');
+          context.read<LoginCubit>().loginWithFacebook();
         },
         image: FruitsAssets.imagesFacebook,
         title: 'تسجيل بواسطة فيسبوك',

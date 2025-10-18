@@ -66,7 +66,9 @@ class AuthRepoImplemtaion extends AuthRepos {
     try {
       final user = await firebaseAuthServes.signInWithFacebook();
       return right(UserModel.fromFirebaseSevices(user));
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
+      log(e.toString());
+
       return left(
         ServerFailure('حدث خطا ما يرجي المحاوله لاحقا '),
       );
