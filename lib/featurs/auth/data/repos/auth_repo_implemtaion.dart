@@ -74,4 +74,18 @@ class AuthRepoImplemtaion extends AuthRepos {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> singinWithApple() async {
+    try {
+      final user = await firebaseAuthServes.signInWithApple();
+      return right(UserModel.fromFirebaseSevices(user));
+    } on FirebaseAuthException catch (e) {
+      log(e.toString());
+
+      return left(
+        ServerFailure('حدث خطا ما يرجي المحاوله لاحقا '),
+      );
+    }
+  }
 }
