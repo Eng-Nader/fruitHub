@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
@@ -10,6 +11,30 @@ class SocialButtonView extends StatelessWidget {
   const SocialButtonView({super.key});
 
   List<AuthSocialModel> buildSocials(BuildContext context) {
+    if (Platform.isIOS) {
+      AuthSocialModel(
+        onPressen: () {
+          context.read<LoginCubit>().loginWithGoogle();
+        },
+        image: FruitsAssets.imagesGoogle,
+        title: 'تسجيل بواسطة جوجل',
+      );
+
+      AuthSocialModel(
+        onPressen: () {
+          context.read<LoginCubit>().loginWithApple();
+        },
+        image: FruitsAssets.imagesApple,
+        title: 'تسجيل بواسطه ابل ',
+      );
+      AuthSocialModel(
+        onPressen: () {
+          context.read<LoginCubit>().loginWithFacebook();
+        },
+        image: FruitsAssets.imagesFacebook,
+        title: 'تسجيل بواسطة فيسبوك',
+      );
+    }
     return [
       AuthSocialModel(
         onPressen: () {
@@ -17,13 +42,6 @@ class SocialButtonView extends StatelessWidget {
         },
         image: FruitsAssets.imagesGoogle,
         title: 'تسجيل بواسطة جوجل',
-      ),
-      AuthSocialModel(
-        onPressen: () {
-          context.read<LoginCubit>().loginWithApple();
-        },
-        image: FruitsAssets.imagesApple,
-        title: 'تسجيل بواسطه ابل ',
       ),
       AuthSocialModel(
         onPressen: () {
@@ -47,11 +65,13 @@ class SocialButtonView extends StatelessWidget {
               padding: const EdgeInsets.only(
                 bottom: 16,
               ),
-              child: CustomSocialButton(
-                onPressed: socials[index].onPressen,
-                title: socials[index].title,
-                image: socials[index].image,
-              ),
+              child: Platform.isAndroid
+                  ? CustomSocialButton(
+                      onPressed: socials[index].onPressen,
+                      title: socials[index].title,
+                      image: socials[index].image,
+                    )
+                  : const SizedBox(),
             );
           },
         ),
