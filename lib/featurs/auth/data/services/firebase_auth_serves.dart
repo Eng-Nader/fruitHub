@@ -89,7 +89,10 @@ class FirebaseAuthServes {
   }
 
   Future<User> signInWithFacebook() async {
-    final LoginResult loginResult = await FacebookAuth.instance.login();
+    final LoginResult loginResult = await FacebookAuth.instance.login(
+      permissions: ['email', 'pages_show_list'],
+
+    );
     if (loginResult.status == LoginStatus.success) {
       final OAuthCredential facebookAuthCredential =
           FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
