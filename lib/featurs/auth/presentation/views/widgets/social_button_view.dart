@@ -65,13 +65,11 @@ class SocialButtonView extends StatelessWidget {
               padding: const EdgeInsets.only(
                 bottom: 16,
               ),
-              child: Platform.isAndroid
-                  ? CustomSocialButton(
-                      onPressed: socials[index].onPressen,
-                      title: socials[index].title,
-                      image: socials[index].image,
-                    )
-                  : const SizedBox(),
+              child: CustomSocialButton(
+                onPressed: socials[index].onPressen,
+                title: socials[index].title,
+                image: socials[index].image,
+              ),
             );
           },
         ),

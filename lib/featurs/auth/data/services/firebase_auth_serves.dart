@@ -90,13 +90,23 @@ class FirebaseAuthServes {
 
   Future<User> signInWithFacebook() async {
     final LoginResult loginResult = await FacebookAuth.instance.login();
+    if (loginResult.status == LoginStatus.success) {
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
 
-    final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
-
-    final facebookCreadintl = await FirebaseAuth.instance
-        .signInWithCredential(facebookAuthCredential);
-    return facebookCreadintl.user!;
+      final facebookCreadintl = await FirebaseAuth.instance
+          .signInWithCredential(facebookAuthCredential);
+      return facebookCreadintl.user!;
+    } else if (loginResult.status == LoginStatus.cancelled) {
+      throw CustomException(
+          exceptionMessage: 'لم يتم تسجيل الدخول حاول مره اخره لاحقا');
+    } else if (loginResult.status == LoginStatus.failed) {
+      throw CustomException(
+          exceptionMessage: 'عمليه تسجيل دخول غير ناجحه حاول مره اخره لاحقا ');
+    } else {
+      throw CustomException(
+          exceptionMessage: 'حدث خطا ما يرجي المحاوله لاحقا ');
+    }
   }
 
   String generateNonce([int length = 32]) {

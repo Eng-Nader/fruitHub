@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/errors/custom_exception.dart';
@@ -54,9 +53,9 @@ class AuthRepoImplemtaion extends AuthRepos {
       return right(
         UserModel.fromFirebaseSevices(user),
       );
-    } catch (e) {
+    } on CustomException catch (e) {
       return left(
-        ServerFailure('حدث خطا ما يرجي المحاوله لاحقا '),
+        ServerFailure(e.toString()),
       );
     }
   }
@@ -66,11 +65,11 @@ class AuthRepoImplemtaion extends AuthRepos {
     try {
       final user = await firebaseAuthServes.signInWithFacebook();
       return right(UserModel.fromFirebaseSevices(user));
-    } on FirebaseAuthException catch (e) {
+    } on CustomException catch (e) {
       log(e.toString());
 
       return left(
-        ServerFailure('حدث خطا ما يرجي المحاوله لاحقا '),
+        ServerFailure(e.toString()),
       );
     }
   }
