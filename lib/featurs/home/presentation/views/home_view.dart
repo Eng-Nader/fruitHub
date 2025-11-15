@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruithub/core/utils/fruits_assets.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
-import 'package:fruithub/featurs/home/presentation/views/cart.dart';
-import 'package:fruithub/featurs/home/presentation/views/catogry.dart';
-import 'package:fruithub/featurs/home/presentation/views/home.dart';
-import 'package:fruithub/featurs/home/presentation/views/profile.dart';
-import 'package:fruithub/featurs/home/presentation/widgets/nav_bar_item.dart';
+import '../../../../core/utils/fruits_assets.dart';
+import '../../../../core/utils/fruits_colors.dart';
+import '../../../../core/utils/styles/fruits_sytls.dart';
+import 'cart.dart';
+import 'catogry.dart';
+import 'home.dart';
+import 'profile.dart';
+import '../widgets/nav_bar_item.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

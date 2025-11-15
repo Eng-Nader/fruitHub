@@ -1,12 +1,14 @@
 import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import '../../../../core/errors/custom_exception.dart';
 import '../../../../core/errors/failure.dart';
-import '../models/user_model.dart';
-import '../services/firebase_auth_serves.dart';
 import '../../domain/entities/user_entity.dart';
 import '../../domain/repos/auth_repos.dart';
+import '../models/user_model.dart';
+import '../services/firebase_auth_serves.dart';
 
 class AuthRepoImplemtaion extends AuthRepos {
   final FirebaseAuthServes firebaseAuthServes;

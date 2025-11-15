@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fruithub/featurs/home/presentation/views/home_view.dart';
+import 'featurs/home/presentation/views/home_view.dart';
 import 'core/utils/services/server_locator_services.dart';
 import 'core/utils/services/bloc_observer_services.dart';
 import 'core/utils/services/shared_prefrences_services.dart';

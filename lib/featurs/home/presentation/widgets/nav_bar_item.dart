@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruithub/core/utils/fruits_colors.dart';
-import 'package:fruithub/core/utils/styles/fruits_sytls.dart';
+import '../../../../core/utils/fruits_colors.dart';
+import '../../../../core/utils/styles/fruits_sytls.dart';
 
 class NavieBarItem extends StatelessWidget {
   const NavieBarItem(

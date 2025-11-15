@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruithub/featurs/auth/presentation/cubits/login_cubit/login_cubit.dart';
+import '../../cubits/login_cubit/login_cubit.dart';
 import '../../../../../core/utils/fruits_assets.dart';
 import '../../../data/models/auth_social_model.dart';
 import 'custom_social_button.dart';
