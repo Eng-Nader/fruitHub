@@ -30,7 +30,7 @@ void creatShowDialog(context) async {
                     height: 29,
                   ),
                   const Text(
-                    'تم تغيير الباسورد بنجاح',
+                    'تم تغيير كلمه المرور بنجاح',
                     style: FruitsSytls.styleBold16,
                   )
                 ],

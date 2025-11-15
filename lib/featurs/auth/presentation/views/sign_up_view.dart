@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub/core/utils/services/firestore_serverices.dart';
 import '../cubits/signup_cubit/sign_up_cubit.dart';
 import '../cubits/signup_cubit/sign_up_state.dart';
 import '../../../../core/utils/functions/show_snack_bar.dart';
 import 'widgets/alrady_have_account.dart';
 import 'widgets/term_and_condation.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../core/utils/widgets/basic_button.dart';
 import 'widgets/custom_auth_header.dart';
 import 'widgets/custom_auth_text_fild.dart';

@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_single_quotes
 class FruitsAssets {
   FruitsAssets._();
 
@@ -28,4 +27,12 @@ class FruitsAssets {
   static const String imagesPupils = "assets/images/pupils.svg";
 
   static const String imagesSplashLogo = "assets/images/splash_logo.svg";
+  static const String home = "assets/images/home.svg";
+  static const String profile = "assets/images/user.svg";
+  static const String categroy = "assets/images/element-3.svg";
+  static const String cart = "assets/images/shopping-cart.svg";
+  static const String activeHome = "assets/images/active_home.svg";
+  static const String activeProfile = "assets/images/active_profile.svg";
+  static const String activeCatogry = "assets/images/active_category.svg";
+  static const String activeCart = "assets/images/active_card.svg";
 }

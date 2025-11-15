@@ -75,7 +75,7 @@ class AuthRepoImplemtaion extends AuthRepos {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> singinWithApple() async {
+  Future<Either<Failure , UserEntity>> singinWithApple() async {
     try {
       final user = await firebaseAuthServes.signInWithApple();
       return right(UserModel.fromFirebaseSevices(user));

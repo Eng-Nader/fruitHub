@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreServerices implements DataBaseServices {
-  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   Future<void> addUser(
       {required String collectionName,
       required Map<String, dynamic> data}) async {
-    await firestore.collection(collectionName).add(data);
+    await _firestore.collection(collectionName).add(data);
   }
 }
 
