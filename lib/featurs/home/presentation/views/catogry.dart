@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CatogryView extends StatelessWidget {
-  const CatogryView({super.key});
+class CatogryPage extends StatelessWidget {
+  const CatogryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
