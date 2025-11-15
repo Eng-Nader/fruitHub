@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/utils/fruits_assets.dart';
-import '../../../../core/utils/fruits_colors.dart';
-import '../../../../core/utils/styles/fruits_sytls.dart';
 import 'cart.dart';
 import 'catogry.dart';
 import 'home.dart';
@@ -22,7 +19,7 @@ class _HomeViewState extends State<HomeView> {
   final _list = [
     _Model(
       FruitsAssets.home,
-      const ProfilePage(),
+      const HomePage(),
       'الرئيسيه',
       FruitsAssets.activeHome,
     ),
@@ -40,7 +37,7 @@ class _HomeViewState extends State<HomeView> {
     ),
     _Model(
       FruitsAssets.profile,
-      const HomePage(),
+      const ProfilePage(),
       'حسابي ',
       FruitsAssets.activeProfile,
     ),

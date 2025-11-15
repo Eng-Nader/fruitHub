@@ -2,6 +2,8 @@ class FruitsAssets {
   FruitsAssets._();
 
   static const String imagesApple = "assets/images/apple.svg";
+  static const String search= "assets/images/search.svg";
+  static const String setting = "assets/images/setting.svg";
   static const String imageCheck = "assets/images/checkImage.svg";
 
   static const String imagesBackGroundPageViewTwo =
@@ -23,8 +25,11 @@ class FruitsAssets {
       "assets/images/on_bording_anana.svg";
 
   static const String imagesPlant = "assets/images/plant.svg";
+  static const String notifaction = "assets/images/notification.svg";
 
   static const String imagesPupils = "assets/images/pupils.svg";
+  static const String profileHomeHeader =
+      "assets/images/profile_home_header.svg";
 
   static const String imagesSplashLogo = "assets/images/splash_logo.svg";
   static const String home = "assets/images/home.svg";
